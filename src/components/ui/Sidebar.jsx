@@ -85,7 +85,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
               className="flex items-center gap-2 justify-between bg-gray-100 p-2 rounded-md"
               onClick={toggleDropdown}
             >
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 text-sm">
                 <BiDockLeft size={20} className="text-gray-600" />
                 <p>Dashboards</p>
               </div>
@@ -111,9 +111,9 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
                     return (
                       <Link href={item.path} key={item.id}>
                         <li
-                          className={`px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-2 rounded-md ${
+                          className={`px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center gap-2 rounded-md text-xs ${
                             pathName === item.path &&
-                            "bg-gradient-to-l from-green-400 to-emerald-600 text-white "
+                            "bg-gradient-to-l from-green-400 to-emerald-600 text-white font-semibold"
                           }`}
                         >
                           {item.icon}

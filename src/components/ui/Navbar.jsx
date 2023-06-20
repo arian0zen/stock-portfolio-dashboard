@@ -51,30 +51,31 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
   }, []);
   return (
     <div className="flex flex-col gap-2 cursor-pointer mt-4 text-gray-600 w-[90%]">
-      <div className="navbar flex justify-between items-center px-4 py-2 bg-white gap-48 border border-sm rounded-lg">
+      <div className="navbar flex justify-between items-center px-4 py-1 bg-white border border-sm rounded-lg">
         <div className="flex items-center justify-around gap-6">
           <RiMenuUnfoldFill
-            size={25}
+            size={18}
             onClick={() => {
               toggleSidebar();
             }}
             className={`block lg:hidden`}
           />
-          <MdOutlineTipsAndUpdates size={25} />
+          <MdOutlineTipsAndUpdates size={18} />
+        <Breadcrumbs url={pathName} />
         </div>
         <div className="flex items-center justify-around gap-6">
-          <BsHouseCheck size={25} />
-          <BsBarChart size={25} />
+          <BsHouseCheck size={18} />
+          <BsBarChart size={18} />
           <div className="relative">
-            <span className="absolute rounded-full h-4 w-4 bg-blue-500 border border-4 border-white -top-2 -right-1"></span>
-            <BsBell size={25} />
+            <span className="absolute rounded-full h-3 w-3 bg-blue-500 border border-2 border-white -top-2 -right-1"></span>
+            <BsBell size={18} />
           </div>
           <div className="relative" ref={profileDropdownRef}>
-            <span className="absolute rounded-full h-4 w-4 bg-green-500 border border-4 border-white right-0 bottom-0"></span>
+            <span className="absolute rounded-full h-3 w-3 bg-green-500 border border-2 border-white right-0 bottom-0"></span>
             <Image
               src={profileImage}
-              height={50}
-              width={50}
+              height={35}
+              width={35 }
               alt="Image"
               className="rounded-full cursor-pointer"
               onClick={toggleDropdown}
@@ -114,9 +115,6 @@ const Navbar = ({ toggleSidebar, isSidebarOpen }) => {
             )}
           </div>
         </div>
-      </div>
-      <div className="breadcrumbs">
-        <Breadcrumbs url={pathName} />
       </div>
     </div>
   );
